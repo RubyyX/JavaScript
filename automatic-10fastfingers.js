@@ -3,7 +3,7 @@
 
 // Let's pretend to type at 150 WPM!
 (async () => {
-  const targetWPM = 150;
+  const targetWPM = 1000; // 1000 makes the words appear almost instantly so you can spam the spacebar :0
   // Calculate delay between letters
   const delay = (60 / targetWPM) * 1000 / 5;
 
@@ -42,7 +42,7 @@
 
   // Main typing test loop
   async function runTypingTest() {
-    const words = document.querySelectorAll('#words span');
+    const words = document.querySelectorAll('#words span'); //Get all spans with classname words
     for (let i = 0; i < words.length - 1; i++) {
       await typeWord(words[i]);
       await waitForSpacebar();
